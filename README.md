@@ -1,26 +1,32 @@
 # neverEndingBacklog
 Burnout chart project for SummerHack
-# Welcome to the neverEndingBacklog wiki!
 
-
-## Goal
+## Project Description
 
 > Web-app to help students to check their knowledge by extracting information from slides (in PDF) and turn them in questionaries like Kahoot.
 
 ## Architecture
 
 ### React Frontend
+Simple load and question show.
+
+#### Features
+
 - Document Upload
 - Download ouput
 - Loaded Icon
 - Control panel with number of questions, type of questions
 - Question screen
 - Score system
-- refresh button
+- Refresh button
 
 
-### Backend Rest API (Django or FastAPI)
-- receive the document and the arguments
+### Backend Rest API (FastAPI and Nginx)
+Question generation model served with a Restful API.
+
+#### Features
+
+- Receive the document and optional arguments
 - Parse the document 
 - Identify parts and put them into dataset
 - Pre-process
@@ -99,17 +105,6 @@ pytest
 
 - James Rosling
 - Felipe Ramos
-
-
-## Project options
-
-Old project Ideas
- - Webapp to make ML model (to upscale images) to production service
- - Webapp to make ML model to convert a scanned document into a PDF (same general idea as pictures but using MNIST and other datasets)
- - messaging app (same idea as mobile project I pitched)
- - App using maps API and a web scraper to find music events near me
- - Garbage collection app - tracks garbage trucks in real time on map so you can see if you missed putting out the bins (apparently there 
-   is an API for truck location available)
 
 
 ## Brainstorming References:
