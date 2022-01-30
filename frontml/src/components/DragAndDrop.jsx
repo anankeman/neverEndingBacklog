@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 //import styles from "./styles.less";
 import {DropzoneArea} from 'react-mui-dropzone';
 import Button from '@mui/material/Button';
@@ -6,24 +7,28 @@ import { Container } from "@mui/material";
 
 function DragAndDrop(){
     const [files, setFiles] = useState([])
+    
+    let nav = useNavigate()
 
     const handleChange = (file) => {
         setFiles([file])
     };
-    const handleOpen= () => {
+    const handleOpen = () => {
         console.log("dole");
+        nav("/questions");
     }
 
     return(
         <React.Fragment>
             <Container maxWidth="sm">
-            <DropzoneArea onChange={() => handleChange()} acceptedFiles={[".pdf"]}/>`
-            <Button onClick={handleOpen()} variant="contained">
-                    Add slides
-            </Button>
+                <DropzoneArea onChange={() => handleChange()} acceptedFiles={[".pdf"]}/>`
+                <Container>
+                    <Button onClick={()=>handleOpen()} variant="contained">
+                        Send slides
+                    </Button>
+                </Container>
             </Container>
             
-        
         </React.Fragment>
 
     );
